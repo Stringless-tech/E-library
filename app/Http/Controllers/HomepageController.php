@@ -12,9 +12,6 @@ class HomepageController extends Controller
 {
     public function index()
     {
-    	$top56 = Book::join('grades','grades.book_id','=','books.id')
-    	->orderBy('grades.value','DESC')
-    	->get();
     	$top5 = DB::table('grades as g')
                 ->join('books as b','g.book_id', '=', 'b.id')
                 ->select(DB::raw('ROUND(AVG(g.value),2) as average_rating'),'b.*')
