@@ -27,12 +27,14 @@
 		<p>Polecane z każdej kategorii</p>
 		@foreach($categories as $category)
 		<h3>{{$category->category_name}}</h3>
-			@foreach(HomepageController::test($category->id) as $item)
+			@foreach(HomepageController::top3($category->id) as $item)
 				<img style="width:100px;height:100px;" src="
 {{ (!is_null($item->file_url)) ? asset('/storage/img/'.basename($item->file_url)) : asset('/storage/img/VCqKhFEZthXwVqof2KhBSeJpkBgybL5BlBu5URxy.jpeg') }}"
 />
 				<p>{{$item->title}}</p>
 				<p>{{$item->author}}</p>
+				<p>{{$item->year}}</p>
+				<p>{{$item->category_name}}</p>
 				<p>{{$item->average_rating}}</p>
 			@endforeach
 		@endforeach

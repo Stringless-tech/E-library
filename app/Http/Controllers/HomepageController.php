@@ -23,11 +23,12 @@ class HomepageController extends Controller
     	return view('home',compact('top5','categories'));
     }
 
-    static function test($category_id)
+    static function top3($category_id)
     {
     	$top3 = DB::table('grades as g')
                 ->join('books as b','g.book_id', '=', 'b.id')
-                ->select(DB::raw('ROUND(AVG(g.value),2) as average_rating'),'b.*')
+                ->join('categories as c','c.id', '=', 'b.category_id')
+                ->select(DB::raw('ROUND(AVG(g.value),2) as average_rating'),'b.*','c.category_name')
                 ->groupBy('g.book_id')
                 ->orderBy('average_rating','DESC')
                 ->limit(3)
