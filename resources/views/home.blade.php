@@ -3,9 +3,32 @@
 <html>
 <head>
 	<title>Strona główna</title>
+	<style type="text/css">
+	section,h1
+	{
+		border-style:dotted;
+		margin-left:10%;
+		margin-right:10%;
+		margin-top:2%;
+		margin-bottom:2%;
+	}
+	</style>
 </head>
 <body>
 	<h1>Strona główna</h1>
+	<section>
+		<p>Wyszukiwarka</p>
+		<form method="GET" action="/search-result">
+			<input type="tex" name="search_slug" placeholder="Wpisz tytuł, autora lub rok wydania">
+			<select name="search_category">
+				<option value="">Wybierz kategorię</option>
+			@foreach($categories as $category)
+				<option value="{{$category->id}}">{{$category->category_name}}</option>
+			@endforeach
+			</select>
+			<button type="submit">Szukaj</button>
+		</form>
+	</section>
 	<section>
 		<p>Banner z top5 ocenami</p>
 		@foreach($top5 as $item)

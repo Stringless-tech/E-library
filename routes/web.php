@@ -5,6 +5,8 @@ use App\Http\Controllers\GradesController;
 use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\BooksController;
 use App\Http\Controllers\HomepageController;
+use App\Http\Controllers\SearchController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -50,3 +52,8 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function(){
 //Single grade, category or book
 Route::get('/books/single/{id}',[BooksController::class,'single']);
 Route::get('/categories/single/{id}',[CategoriesController::class,'single']);
+
+//Search result page
+Route::get('/search-result',[SearchController::class,'searchResults']);
+
+
