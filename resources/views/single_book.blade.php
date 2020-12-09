@@ -22,12 +22,16 @@
 <form action="/grades/addoredit" method="POST">
 	@csrf
 	<select name="value">
-  		<option value="0" {{ ( $user_grade == 0) ? 'selected' : '' }}>0</option>
   		<option value="1" {{ ( $user_grade == 1) ? 'selected' : '' }}>1</option>
   		<option value="2" {{ ( $user_grade == 2) ? 'selected' : '' }}>2</option>
   		<option value="3" {{ ( $user_grade == 3) ? 'selected' : '' }}>3</option>
   		<option value="4" {{ ( $user_grade == 4) ? 'selected' : '' }}>4</option>
-  		<option value="5" {{ ( $user_grade == 5) ? 'selected' : '' }}>5</option>  		
+  		<option value="5" {{ ( $user_grade == 5) ? 'selected' : '' }}>5</option>
+      <option value="6" {{ ( $user_grade == 6) ? 'selected' : '' }}>6</option>
+      <option value="7" {{ ( $user_grade == 7) ? 'selected' : '' }}>7</option>
+      <option value="8" {{ ( $user_grade == 8) ? 'selected' : '' }}>8</option>
+      <option value="9" {{ ( $user_grade == 9) ? 'selected' : '' }}>9</option>
+      <option value="10" {{ ( $user_grade == 10) ? 'selected' : '' }}>10</option> 		
 	</select>
 	<input type="hidden" name="book_id" value="{{$book->id}}"/>
 	<button type="submit">Oceń</button>

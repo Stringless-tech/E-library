@@ -21,6 +21,7 @@ class CreateBooksTable extends Migration
             $table->string('category_id');
             $table->string('year');
             $table->timestamps();
+            $table->string('file_url')->default(null);
         });
     }
 

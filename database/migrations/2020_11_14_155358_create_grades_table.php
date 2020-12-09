@@ -1,4 +1,4 @@
-<?php
+    <?php
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -15,9 +15,9 @@ class CreateGradesTable extends Migration
     {
         Schema::create('grades', function (Blueprint $table) {
             $table->id();
-            $table->int('value');
+            $table->integer('value');
             $table->string('book_id');
-            $table->int('user_id');
+            $table->integer('user_id');
             $table->timestamps();
         });
     }
