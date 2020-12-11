@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="{{ asset('css/app.css')  }}">
 <h1>List all category</h1>
 <a href="/categories/add"><button>Add Category</button></a>
 <br/><br/>

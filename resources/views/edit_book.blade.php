@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="{{ asset('css/app.css')  }}">
 <h1>Edit Book</h1>
 <form action="" method="POST" enctype="multipart/form-data">
 	@csrf

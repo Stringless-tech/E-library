@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="{{ asset('css/app.css')  }}">
 <h1>Add category</h1>
 <form action="/categories/add" method="POST">
 	@csrf
