@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="{{ asset('css/app.css')  }}">
 <h1>List all books</h1>
 <a href="/books/add"><button>Add book</button></a>
 <br/><br/>

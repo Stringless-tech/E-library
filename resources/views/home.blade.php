@@ -3,7 +3,16 @@
 <html>
 <head>
 	<title>Strona główna</title>
-	<link rel="stylesheet" href="{{ asset('css/app.css')  }}">
+	<style type="text/css">
+	section,h1
+	{
+		border-style:dotted;
+		margin-left:10%;
+		margin-right:10%;
+		margin-top:2%;
+		margin-bottom:2%;
+	}
+	</style>
 </head>
 <body>
 	<h1>Strona główna</h1>

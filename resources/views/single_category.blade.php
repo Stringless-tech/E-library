@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="{{ asset('css/app.css')  }}">
 <h1>Single category</h1>
 <p>Książki z kategorii {{$category->category_name}}</p>
 <section style="width:100%;">
