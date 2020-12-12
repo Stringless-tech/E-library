@@ -50,4 +50,8 @@
 <p><a href="/books/list">Lista książek</a></p>
 <p><a href="/register">Zarejestruj</a></p>
 <p><a href="/login">Zaloguj</a></p>
-<p><a href="/logout">Wyloguj</a></p>
+<form method="POST" action="{{ route('logout') }}">
+@csrf
+<x-jet-dropdown-link href="{{ route('logout') }}" onclick="event.preventDefault();
+this.closest('form').submit();">{{ __('Wyloguj') }}</x-jet-dropdown-link>
+</form>

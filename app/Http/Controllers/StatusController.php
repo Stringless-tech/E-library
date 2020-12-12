@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Status;
 use App\Models\Book;
+use App\Models\Category;
 use Illuminate\Support\Facades\DB;
 
 class StatusController extends Controller
@@ -62,6 +63,14 @@ class StatusController extends Controller
     			->where('s.user_id','=',auth()->user()->id)
     			->get();
     	}
-    	return view('dashboard',compact('books'));
+
+    	$newest_books = DB::table('books as b')
+    					->join('categories as c','c.id','=','b.category_id')
+    					->select('b.*','c.category_name')
+    					->orderBy('id','DESC')
+    					->limit(4)
+    					->get();
+    	$categories = Category::all();
+    	return view('dashboard',compact('books','newest_books','categories'));
     }
 }
