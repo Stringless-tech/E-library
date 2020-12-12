@@ -37,3 +37,17 @@
 	<button type="submit">Oceń</button>
 </form>
 @endif
+
+@if (Auth::check())
+<h2>Dodaj status</h2>
+<form action="/statuses/addoredit" method="POST">
+  @csrf
+  <select name="status">
+      <option value="planowane" {{ ( $user_status == 'planowane') ? 'selected' : '' }}>Planowane</option>
+      <option value="przeczytane" {{ ( $user_status == 'przeczytane') ? 'selected' : '' }}>Przeczytane</option>
+      <option value="odrzucone" {{ ( $user_status == 'odrzucone') ? 'selected' : '' }}>Odrzucone</option>    
+  </select>
+  <input type="hidden" name="book_id" value="{{$book->id}}"/>
+  <button type="submit">Dodaj status</button>
+</form>
+@endif

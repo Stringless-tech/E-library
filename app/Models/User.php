@@ -63,4 +63,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Grade::class);
     }
+
+    public function statuses()
+    {
+        return $this->hasMany(Status::class);
+    }
 }

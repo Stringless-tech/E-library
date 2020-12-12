@@ -6,6 +6,7 @@ use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\BooksController;
 use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\SearchController;
+use App\Http\Controllers\StatusController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,6 +32,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function(){
 
 	//Add grades
 	Route::post('/grades/addoredit',[GradesController::class,'addOrEditGrade']);
+	Route::post('/statuses/addoredit',[StatusController::class,'addOrEditStatus']);
 
 	//Admin pages
 	Route::group(['middleware' => ['adminPages']],function(){

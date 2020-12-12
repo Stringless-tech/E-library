@@ -7,6 +7,7 @@ use App\Models\Book;
 use App\Models\Category;
 use Illuminate\Support\Facades\DB;
 use App\Models\Grade;
+use App\Models\Status;
 
 class BooksController extends Controller
 {
@@ -23,7 +24,8 @@ class BooksController extends Controller
     	$category = Book::find($id)->category;
         $grade = round(Book::find($id)->grades()->avg('value'),2);
         $user_grade = Grade::where('book_id',$id)->where('user_id',auth()->user()->id ?? '')->first()->value ?? '';
-    	return view('single_book',compact('book','category','grade','user_grade'));
+        $user_status = Status::where('book_id',$id)->where('user_id',auth()->user()->id ?? '')->first()->status ?? '';
+    	return view('single_book',compact('book','category','grade','user_grade','user_status'));
     }
     
     public function addView()
