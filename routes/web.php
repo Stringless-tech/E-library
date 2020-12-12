@@ -26,10 +26,11 @@ Route::get('/',[HomepageController::class,'index']);
 })->name('dashboard');*/
 
 Route::middleware(['auth:sanctum', 'verified'])->group(function(){
-    Route::get('/dashboard',function () {
+   /* Route::get('/dashboard',function () {
     return view('dashboard');
-})->name('dashboard');
+})->name('dashboard');*/
 
+    Route::get('/dashboard',[StatusController::class,'index'])->name('dashboard');
 	//Add grades
 	Route::post('/grades/addoredit',[GradesController::class,'addOrEditGrade']);
 	Route::post('/statuses/addoredit',[StatusController::class,'addOrEditStatus']);

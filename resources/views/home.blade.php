@@ -1,20 +1,4 @@
 <?php use App\Http\Controllers\HomepageController; ?>
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Strona główna</title>
-	<style type="text/css">
-	section,h1
-	{
-		border-style:dotted;
-		margin-left:10%;
-		margin-right:10%;
-		margin-top:2%;
-		margin-bottom:2%;
-	}
-	</style>
-</head>
-<body>
 	<h1>Strona główna</h1>
 	<section>
 		<p>Wyszukiwarka</p>
@@ -67,5 +51,3 @@
 <p><a href="/register">Zarejestruj</a></p>
 <p><a href="/login">Zaloguj</a></p>
 <p><a href="/logout">Wyloguj</a></p>
-</body>
-</html>
