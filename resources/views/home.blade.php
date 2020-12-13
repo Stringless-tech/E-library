@@ -24,6 +24,7 @@
 />
 			<h2>{{$item->title}}</h2>
 			<p>{{$item->author}}</p>
+			<p>{{$item->year}}</p>
 			<p>Ocena: {{$item->average_rating}}</p>
 			</a>
 		</div>
@@ -35,28 +36,24 @@
 		<p><a href="/categories/single/{{$category->id}}">{{$category->category_name}}</a></p>
 		@endforeach
 	</section>
-	<section>
-		<p>Polecane z każdej kategorii</p>
-		@foreach($categories as $category)
-		<h3>{{$category->category_name}}</h3>
+	<h2 class="text-center w-full">Polecane z każdej kategorii</div>
+	@foreach($categories as $category)
+		<div class="border-2 border-blue-500 my-10 mx-4">
+			<h2 class="text-center w-full">{{$category->category_name}}</h2>
+			<div class="md:flex py-4 px-1">
 			@foreach(HomepageController::top3($category->id) as $item)
-				<img style="width:100px;height:100px;" src="
-{{ (!is_null($item->file_url)) ? asset('/storage/img/'.basename($item->file_url)) : asset('/storage/img/VCqKhFEZthXwVqof2KhBSeJpkBgybL5BlBu5URxy.jpeg') }}"
-/>
-				<p>{{$item->title}}</p>
-				<p>{{$item->author}}</p>
-				<p>{{$item->year}}</p>
-				<p>{{$item->category_name}}</p>
-				<p>{{$item->average_rating}}</p>
+				<div class="w-full md:w-1/3 md:mx-8 text-center">
+					<a href="/books/single/{{$item->id}}">
+					<img style="width:100%;height:450px;" src="
+{{ (!is_null($item->file_url)) ? asset('/storage/img/'.basename($item->file_url)) : asset('/storage/img/VCqKhFEZthXwVqof2KhBSeJpkBgybL5BlBu5URxy.jpeg') }}"/>
+					<h2>{{$item->title}}</h2>
+					<p>{{$item->author}}</p>
+					<p>{{$item->year}}</p>
+					<p>{{$item->category_name}}</p>
+					<p>Ocena: {{(!is_null($item->average_rating)) ? $item->average_rating : 'Brak ocen'}}</p>
+					</a>
+				</div>
 			@endforeach
-		@endforeach
-	</section>
-<p><a href="/categories/list">Lista kategorii</a></p>
-<p><a href="/books/list">Lista książek</a></p>
-<p><a href="/register">Zarejestruj</a></p>
-<p><a href="/login">Zaloguj</a></p>
-<form method="POST" action="{{ route('logout') }}">
-@csrf
-<x-jet-dropdown-link href="{{ route('logout') }}" onclick="event.preventDefault();
-this.closest('form').submit();">{{ __('Wyloguj') }}</x-jet-dropdown-link>
-</form>
+			</div>
+		</div>
+	@endforeach
