@@ -1,3 +1,4 @@
+<x-header/>
 <h1>Edit Book</h1>
 <form action="" method="POST" enctype="multipart/form-data">
 	@csrf

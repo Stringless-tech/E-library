@@ -1,3 +1,4 @@
+<x-header/>
 <h1>List all category</h1>
 <a href="/categories/add"><button>Add Category</button></a>
 <br/><br/>

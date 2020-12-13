@@ -1,3 +1,4 @@
+<x-header/>
 <h1>Add book</h1>
 <form action="/books/add" method="POST" enctype="multipart/form-data">
 	@csrf

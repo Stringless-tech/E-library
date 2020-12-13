@@ -1,3 +1,4 @@
+<x-header/>
 <h1>List all grades</h1>
 <a href="/grades/add"><button>Add Grade</button></a>
 <br/><br/>

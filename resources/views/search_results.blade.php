@@ -1,3 +1,4 @@
+<x-header/>
 <h1>Wyniki wyszukiwania</h1>
 @foreach($books as $book)
 	<img style="width:100px;height:100px;" src="

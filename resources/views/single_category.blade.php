@@ -1,3 +1,4 @@
+<x-header/>
 <h1>Single category</h1>
 <p>Książki z kategorii {{$category->category_name}}</p>
 <section style="width:100%;">

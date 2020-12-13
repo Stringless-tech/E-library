@@ -1,9 +1,4 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Moja półka') }}
-        </h2>
-    </x-slot>
+<x-header/>
 
 @foreach($newest_books as $item)
     <img style="width:100px;height:100px;" src="{{ (!is_null($item->file_url)) ? asset('/storage/img/'.basename($item->file_url)) : asset('/storage/img/VCqKhFEZthXwVqof2KhBSeJpkBgybL5BlBu5URxy.jpeg') }}"/>
@@ -57,4 +52,3 @@
         </tr>
     @endforeach
 </table>
-</x-app-layout>

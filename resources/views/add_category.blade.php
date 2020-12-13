@@ -1,3 +1,4 @@
+<x-header/>
 <h1>Add category</h1>
 <form action="/categories/add" method="POST">
 	@csrf
