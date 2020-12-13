@@ -11,10 +11,10 @@
 </tr>
 @foreach($data as $item)
 <tr>
-<td><a href="/categories/single/{{$item->id}}">{{$item->category_name}}</a></td>
-<td>{{$item->created_at}}</td>
-<td>{{$item->updated_at}}</td>
-<td><a href="/categories/edit/{{$item->id}}">Edit</a></td>
+<td class="text-center"><a href="/categories/single/{{$item->id}}">{{$item->category_name}}</a></td>
+<td class="text-center">{{$item->created_at}}</td>
+<td class="text-center">{{$item->updated_at}}</td>
+<td class="text-center"><a href="/categories/edit/{{$item->id}}">Edit</a></td>
 </tr>
 @endforeach
 </table>

@@ -19,12 +19,12 @@
 {{ (!is_null($item->file_url)) ? asset('/storage/img/'.basename($item->file_url)) : asset('/storage/img/VCqKhFEZthXwVqof2KhBSeJpkBgybL5BlBu5URxy.jpeg') }}"
 />
 </td>
-<td><a href="/books/single/{{$item->id}}">{{$item->title}}</a></td>
-<td>{{$item->author}}</td>
-<td>{{$item->category_id}}</td>
-<td>{{$item->year}}</td>
-<td>{{$item->description}}</td>
-<td><a href="/books/edit/{{$item->id}}">Edit</a></td>
+<td class="text-center"><a href="/books/single/{{$item->id}}">{{$item->title}}</a></td>
+<td class="text-center">{{$item->author}}</td>
+<td class="text-center">{{$item->category_id}}</td>
+<td class="text-center">{{$item->year}}</td>
+<td class="text-center">{{$item->description}}</td>
+<td class="text-center"><a href="/books/edit/{{$item->id}}">Edit</a></td>
 </tr>
 @endforeach
 </table>
