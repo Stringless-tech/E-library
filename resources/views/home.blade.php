@@ -11,7 +11,7 @@
 				<option value="{{$category->id}}">{{$category->category_name}}</option>
 			@endforeach
 			</select>
-			<button class="w-full md:w-1/4 bg-yellow-400 text-gray-800 rounded hover:bg-yellow-300 px-4 py-2 focus:outline-none" type="submit">Szukaj</button>
+			<button class="w-full md:w-1/4 bg-yellow-400 text-white rounded hover:bg-yellow-300 px-4 py-2 focus:outline-none" type="submit">Szukaj</button>
 		</form>
 	</div>
 	<h2 class="text-center w-full">TOP5 oceniane</h2>

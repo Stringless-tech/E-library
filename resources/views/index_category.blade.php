@@ -1,13 +1,13 @@
 <x-header/>
-<h1>List all category</h1>
-<a href="/categories/add"><button>Add Category</button></a>
+<h1>Lista wszystkich kategorii</h1>
+<a href="/categories/add"><button class="bg-yellow-400 text-white rounded hover:bg-yellow-300 px-4 py-2 focus:outline-none">Dodaj kategorię</button></a>
 <br/><br/>
 <table border="1">
 <tr>
-<th>Category name</th>
-<th>Created at</th>
-<th>Updated at</th>
-<th>Operations</th>
+<th>Nazwa kategorii</th>
+<th>Stworzona</th>
+<th>Aktualizowana</th>
+<th>Akcje</th>
 </tr>
 @foreach($data as $item)
 <tr>

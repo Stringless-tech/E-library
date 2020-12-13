@@ -1,16 +1,16 @@
 <x-header/>
-<h1>List all books</h1>
-<a href="/books/add"><button>Add book</button></a>
+<h1>List wszystkich książek</h1>
+<a href="/books/add"><button class="bg-yellow-400 text-white rounded hover:bg-yellow-300 px-4 py-2 focus:outline-none">Dodaj książke</button></a>
 <br/><br/>
 <table border="1">
 <tr>
-<th>Image</th>
-<th>Title</th>
-<th>Author</th>
-<th>Category id</th>
-<th>Year</th>
-<th>Description</th>
-<th>Operations</th>
+<th>Obraz</th>
+<th>Tytuł</th>
+<th>Autor</th>
+<th>ID kategorii</th>
+<th>Rok</th>
+<th>Opis</th>
+<th>Akcje</th>
 </tr>
 @foreach($data as $item)
 <tr>
