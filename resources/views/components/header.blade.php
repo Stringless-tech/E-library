@@ -25,7 +25,7 @@
 </head>
 <nav x-data="{show:false}" class="flex items-center justify-between flex-wrap bg-blue-500 p-6">
   <div class="flex items-center flex-shrink-0 text-white mr-6">
-    <a href="/"><img style="width:300px;height:123px;" src="{{asset('/storage/Logo2.png')}}"/></a>
+    <a href="/"><img style="width:250px;height:103px;" src="{{asset('/storage/Logo2.png')}}"/></a>
   </div>
   <div class="block md:hidden">
     <button @click="show=!show" class="flex items-center px-3 py-2 border rounded text-gray-100 border-gray-200 hover:text-white hover:border-white">
@@ -34,19 +34,19 @@
   </div>
   <div @click.away="show = false" :class="{ 'block': show, 'hidden': !show }" class="w-full block flex-grow md:flex md:justify-end md:w-auto">
     <div>
-    <a href="/" class="block md:inline-block text-sm px-4 py-2 leading-none rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 md:mt-0">Strona główna</a>
- 	  <a href="/books/list" class="block md:inline-block text-sm px-4 py-2 leading-none rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 md:mt-0">Lista książek</a>
- 	  <a href="/categories/list" class="block md:inline-block text-sm px-4 py-2 leading-none rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 md:mt-0">Lista kategorii</a>
+    <a href="/" class="block md:inline-block text-lg px-4 py-2 leading-none rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white hover:bg-white mt-4 md:mt-0">Strona główna</a>
+ 	  <a href="/books/list" class="block md:inline-block text-lg px-4 py-2 leading-none rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 md:mt-0">Lista książek</a>
+ 	  <a href="/categories/list" class="block md:inline-block text-lg px-4 py-2 leading-none rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 md:mt-0">Lista kategorii</a>
     @if (Auth::check())
-    <a href="/dashboard" class="block md:inline-block text-sm px-4 py-2 leading-none rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 md:mt-0">Moja półka</a>
-    <a href="/user/profile" class="block md:inline-block text-sm px-4 py-2 leading-none rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 md:mt-0">Profil</a>
-    <form class="block md:inline-block text-sm px-4 py-2 leading-none rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 md:mt-0" method="POST" action="{{ route('logout') }}">
+    <a href="/dashboard" class="block md:inline-block text-lg px-4 py-2 leading-none rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 md:mt-0">Moja półka</a>
+    <a href="/user/profile" class="block md:inline-block text-lg px-4 py-2 leading-none rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 md:mt-0">Profil</a>
+    <form class="block md:inline-block text-lg px-4 py-2 leading-none rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 md:mt-0" method="POST" action="{{ route('logout') }}">
     @csrf
     <a href="{{ route('logout') }}" onclick="event.preventDefault();this.closest('form').submit();">{{ __('Wyloguj') }}</a>
     </form>
     @else
-    <a href="/login" class="block md:inline-block text-sm px-4 py-2 leading-none rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 md:mt-0">Zaloguj</a>
-    <a href="/register" class="block md:inline-block text-sm px-4 py-2 leading-none rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 md:mt-0">Zarejestruj</a>
+    <a href="/login" class="block md:inline-block text-lg px-4 py-2 leading-none rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 md:mt-0">Zaloguj</a>
+    <a href="/register" class="block md:inline-block text-lg px-4 py-2 leading-none rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 md:mt-0">Zarejestruj</a>
     @endif
     </div>
   </div>
