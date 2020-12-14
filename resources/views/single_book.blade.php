@@ -1,5 +1,7 @@
 <x-header/>
-<h1>Single book</h1>
+    <div class="bg-yellow-400 py-10 px-10 mb-10 text-center text-white">
+        <h1>Książka: {{$book->title}}</h1>
+    </div>
 <img style="width:100px;height:100px;" src="
 {{ (!is_null($book->file_url)) ? asset('/storage/img/'.basename($book->file_url)) : asset('/storage/img/VCqKhFEZthXwVqof2KhBSeJpkBgybL5BlBu5URxy.jpeg') }}"
 />

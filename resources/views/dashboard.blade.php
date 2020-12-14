@@ -1,5 +1,7 @@
 <x-header/>
-
+    <div class="bg-yellow-400 py-10 px-10 mb-10 text-center text-white">
+        <h1>Moja półka</h1>
+    </div>
 @foreach($newest_books as $item)
     <img style="width:100px;height:100px;" src="{{ (!is_null($item->file_url)) ? asset('/storage/img/'.basename($item->file_url)) : asset('/storage/img/VCqKhFEZthXwVqof2KhBSeJpkBgybL5BlBu5URxy.jpeg') }}"/>
     <p>{{$item->title}}</p>

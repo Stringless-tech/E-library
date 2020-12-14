@@ -1,5 +1,7 @@
 <x-header/>
-<h1>Single category</h1>
+    <div class="bg-yellow-400 py-10 px-10 mb-10 text-center text-white">
+        <h1>Kategoria: {{$category->category_name}}</h1>
+    </div>
 <p>Książki z kategorii {{$category->category_name}}</p>
 <section style="width:100%;">
 @foreach($books as $book)

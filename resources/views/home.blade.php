@@ -1,6 +1,8 @@
 <?php use App\Http\Controllers\HomepageController; ?>
 <x-header/>
-	<h1>Strona główna</h1>
+	<div class="bg-yellow-400 py-10 px-10 mb-10 text-center text-white">
+		<h1>Strona główna</h1>
+	</div>
 	<div class="bg-blue-200 py-4 px-1 md:px-48">
 		<h2 class="text-center">Wyszukiwarka</h2>
 		<form method="GET" action="/search-result">
