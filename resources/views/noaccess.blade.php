@@ -3,3 +3,4 @@
         <h1>Brak dostępu</h1>
     </div>
 <h1>Brak dostępu</h1>
+<x-footer/>

@@ -20,3 +20,4 @@
 </tr>
 @endforeach
 </table>
+<x-footer/>

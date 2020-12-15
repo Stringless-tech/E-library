@@ -35,9 +35,12 @@
   <div @click.away="show = false" :class="{ 'block': show, 'hidden': !show }" class="w-full block flex-grow md:flex md:justify-end md:w-auto">
     <div>
     <a href="/" class="block md:inline-block text-lg px-4 py-2 leading-none rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white hover:bg-white mt-4 md:mt-0">Strona główna</a>
+    @if (Auth::check())
+    @if(auth()->user()->isAdmin)
  	  <a href="/books/list" class="block md:inline-block text-lg px-4 py-2 leading-none rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 md:mt-0">Lista książek</a>
  	  <a href="/categories/list" class="block md:inline-block text-lg px-4 py-2 leading-none rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 md:mt-0">Lista kategorii</a>
-    @if (Auth::check())
+    @endif
+    
     <a href="/dashboard" class="block md:inline-block text-lg px-4 py-2 leading-none rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 md:mt-0">Moja półka</a>
     <a href="/user/profile" class="block md:inline-block text-lg px-4 py-2 leading-none rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 md:mt-0">Profil</a>
     <form class="block md:inline-block text-lg px-4 py-2 leading-none rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 md:mt-0" method="POST" action="{{ route('logout') }}">

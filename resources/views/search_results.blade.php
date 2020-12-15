@@ -10,3 +10,5 @@
 	<p>{{$book->author}}</p>
 	<p>{{$book->year}}</p>
 @endforeach
+
+<x-footer/>
