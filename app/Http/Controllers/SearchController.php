@@ -14,16 +14,16 @@ class SearchController extends Controller
 
     	if(isset($request->search_slug ) && $request->search_category == '')
     	{
-    		$books = Book::where('title','=',$request->search_slug)
-    			->orWhere('author','=',$request->search_slug)
-    			->orWhere('year','=',$request->search_slug)
+    		$books = Book::where('title','like','%'.$request->search_slug.'%')
+    			->orWhere('author','like','%'.$request->search_slug.'%')
+    			->orWhere('year','like','%'.$request->search_slug.'%')
     			->get();		
     	}
     	elseif(isset($request->search_slug ) && $request->search_category != '')
     	{
-    		$books = Book::where('title','=',$request->search_slug)
-    			->orWhere('author','=',$request->search_slug)
-    			->orWhere('year','=',$request->search_slug)
+    		$books = Book::where('title','like','%'.$request->search_slug.'%')
+    			->orWhere('author','like','%'.$request->search_slug.'%')
+    			->orWhere('year','like','%'.$request->search_slug.'%')
     			->where('category_id','=',$request->search_category)
     			->get();		
     	}
