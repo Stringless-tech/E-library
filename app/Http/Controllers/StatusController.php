@@ -64,6 +64,8 @@ class StatusController extends Controller
     			->get();
     	}
 
+        $featured_books = $this->recommendedForYou();
+
     	$newest_books = DB::table('books as b')
     					->join('categories as c','c.id','=','b.category_id')
     					->select('b.*','c.category_name')
@@ -71,6 +73,33 @@ class StatusController extends Controller
     					->limit(4)
     					->get();
     	$categories = Category::all();
-    	return view('dashboard',compact('books','newest_books','categories'));
+    	return view('dashboard',compact('books','newest_books','categories','featured_books'));
+    }
+
+    public function recommendedForYou()
+    {
+        $help_query_in = DB::table('books as b')
+                ->join('statuses as s', 'b.id', '=', 's.book_id')
+                ->join('categories as c','c.id','=','b.category_id')
+                ->select('b.category_id')
+                ->where('s.user_id','=',auth()->user()->id)
+                ->where('s.status','=','przeczytane');
+
+        $help_query_not_in = DB::table('books as b')
+                ->join('statuses as s', 'b.id', '=', 's.book_id')
+                ->join('categories as c','c.id','=','b.category_id')
+                ->select('b.id')
+                ->where('s.user_id','=',auth()->user()->id)
+                ->where('s.status','=','przeczytane');
+
+        $fb = DB::table('books as b')
+            ->select('b.*')
+            ->whereIn('b.category_id', $help_query_in)
+            ->whereNotIn('b.id', $help_query_not_in)
+            ->inRandomOrder()
+            ->limit(5)
+            ->get();
+
+            return $fb;
     }
 }

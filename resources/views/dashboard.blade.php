@@ -22,6 +22,19 @@
             </div>
         @endforeach
     </div>
+        <h2 class="text-center w-full mt-10">POLECANE DLA CIEBIE</h2>
+    <div class="md:flex py-4 px-1 md:border-2 border-blue-500">
+        @foreach($featured_books as $item)
+            <div class="w-full md:w-1/5 md:mx-1 text-center">
+                <a href="/books/single/{{$item->id}}">
+                <img style="width:100%;height:400px;" src="{{ (!is_null($item->file_url)) ? asset('/storage/img/'.basename($item->file_url)) : asset('/storage/img/VCqKhFEZthXwVqof2KhBSeJpkBgybL5BlBu5URxy.jpeg') }}"/>
+                <h2>{{$item->title}}</h2>
+                <p>{{$item->author}}</p>
+                <p>{{$item->year}}</p>
+                </a>
+            </div>
+        @endforeach
+    </div>
     <div class="bg-blue-200 py-4 px-1 md:px-48 my-10">
         <h2 class="text-center">Wyszukiwarka</h2>
         <form method="GET" action="/search-result">
